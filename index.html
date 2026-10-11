@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> .. ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Padauk', 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #9affd8 0%, #cffef1 50%, #feada6 100%);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .floating-heart {
+            position: absolute;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.6);
+            user-select: none;
+            pointer-events: none;
+            animation: floatUp 8s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            padding: 40px 25px;
+            border-radius: 28px;
+            box-shadow: 0 20px 50px rgba(233, 30, 99, 0.25);
+            text-align: center;
+            max-width: 420px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* GIF Wrapper ၏ Frame နှင့် Background များကို ဖယ်ရှားထားပါသည် */
+        .gif-wrapper {
+            width: 170px;
+            height: 170px;
+            margin: 0 auto 20px;
+            position: relative;
+            padding: 0;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        /* GIF ပုံ၏ Border, Circle shape နှင့် Background များကို ဖယ်ရှားထားပါသည် */
+        .gift-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 0;
+            background: transparent;
+        }
+
+        h2 {
+            color: #d81b60;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .warning-container {
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .warning-text {
+            color: #c2185b;
+            font-size: 16px;
+            font-weight: 700;
+            background: rgba(255, 235, 238, 0.8);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px dashed #ff80ab;
+            display: inline-block;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            min-height: 80px;
+        }
+
+        button {
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-family: 'Padauk', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            outline: none;
+        }
+
+        .yes-btn {
+            background: linear-gradient(135deg, #111199, #38ef7d);
+            color: white;
+            font-size: 20px;
+            padding: 14px 28px;
+            box-shadow: 0 8px 20px rgba(56, 239, 125, 0.4);
+        }
+
+        .no-btn {
+            background: linear-gradient(135deg, #ff41d0, #ff4b2b);
+            color: white;
+            font-size: 18px;
+            padding: 14px 28px;
+            box-shadow: 0 8px 20px rgba(255, 65, 108, 0.3);
+        }
+
+        .celebrate-title {
+            color: #d81b60;
+            font-size: 26px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .celebrate-desc {
+            color: #ad1457;
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="floating-heart" style="left: 10%; animation-duration: 7s;">❤️</div>
+<div class="floating-heart" style="left: 25%; animation-duration: 10s; animation-delay: 1s;">💖</div>
+<div class="floating-heart" style="left: 45%; animation-duration: 8s; animation-delay: 2s;">💕</div>
+<div class="floating-heart" style="left: 70%; animation-duration: 9s; animation-delay: 0.5s;">🌸</div>
+
+<div class="card" id="card">
+    <div class="gif-wrapper">
+        <img id="gift" class="gift-img" src="https://media.tenor.com/DOSa3AHmmiUAAAAj/milk-and-mocha.gif">
+    </div>
+    <h2>ကိုယ့်ကို ပြန်ချစ်ပေးနိုင်မလား .. ❤️</h2>
+    <div class="warning-container">
+        <div id="warning" class="warning-text">စဉ်းစားပါဦးနော်... 🥺</div>
+    </div>
+    <div class="btn-group">
+        <button id="yesBtn" class="yes-btn" onclick="sayYes()">ချစ်တယ်</button>
+        <button id="noBtn" class="no-btn" onclick="sayNo()">ဟင့်အင်</button>
+    </div>
+</div>
+
+<script>
+    // သင်၏ Formspree Link ကို ထည့်သွင်းထားပြီးဖြစ်ပါသည်
+    const FORMSPREE_URL = "";
+
+    const gifs = [
+        "https://media.tenor.com/WC0mv2OuqrAAAAAi/milk-and-mocha.gif",
+        "https://media.tenor.com/8O1oD64iksgAAAAi/milk-and-mocha.gif",
+        "https://media.tenor.com/mNO8aMW3GB8AAAAi/milk-and-mocha-mocha.gif"
+    ];
+
+    const warnings = [
+        "မငြင်းပါနဲ့",
+        "စဉ်းစားပါဦး... 💔",
+        "စိတ်မဆိုးပါနဲ့နော်... ❤️",
+        "Please...😭",
+        "လက်ခံပေးပါတော့... ✨"
+    ];
+
+    let yesScale = 1;
+    let noScale = 1;
+    let gifIndex = 0;
+    let noClickCount = 0;
+
+    function sayNo() {
+        noClickCount++;
+        gifIndex = (gifIndex + 1) % gifs.length;
+        document.getElementById('gift').src = gifs[gifIndex];
+
+        const randomWarning = warnings[Math.floor(Math.random() * warnings.length)];
+        document.getElementById('warning').innerText = randomWarning;
+
+        yesScale += 0.35;
+        noScale -= 0.15;
+        if (noScale < 0.2) noScale = 0.2;
+
+        document.getElementById('yesBtn').style.transform = `scale(${yesScale})`;
+        document.getElementById('noBtn').style.transform = `scale(${noScale})`;
+    }
+
+    function sayYes() {
+        // UI ပြောင်းလဲခြင်း
+        document.getElementById('card').innerHTML = `
+            <div class="gif-wrapper">
+                <img class="gift-img" src="https://media.tenor.com/z1N2jUKR9oMAAAAi/milk-and-mocha.gif">
+            </div>
+            <div class="celebrate-title"> ကိုယ်လဲ မင်းကို အရမ်းချစ်တယ်! 🥰❤️</div>
+            <div class="celebrate-desc">ဒီနေ့တစ်နေ့လုံးမင်းကြောင်းဘဲ စိတ်ကတွေးနေမိတယ် ကျောင်းမာဆိုလဲ မင်းကိုဘဲလိုက်ကြည့်နေမိတယ် မင်းရဲ့အနေအေးတဲ့ပုံစံလေးကိုသဘောကျတယ် မင်းအပြုံးလေးတွေကိုလဲ‌နေ့တိုင်းမြင်ချင်မိတယ် မင်းရဲ့အမူအရာလေးတွေကလဲ ကိုယ့်ကိုစွဲလန်းမိစေတယ်</div>
+        `;
+
+        // သင့် Gmail ထံသို့ အကြောင်းကြားစာ ပို့ဆောင်ခြင်း
+        fetch(FORMSPREE_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                message: "သူ 'ချစ်တယ်' ခလုတ်ကို နှိပ်လိုက်ပါပြီ! ❤️🥰",
+                no_clicked_times: `"ဟင့်အင်" ကို ${noClickCount} ကြိမ် နှိပ်ခဲ့ပါသည်။`,
+                date: new Date().toLocaleString()
+            })
+        }).catch(err => console.log('Mail sent error:', err));
+    }
+</script>
+
+</body>
+</html>
